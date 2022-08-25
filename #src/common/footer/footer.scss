@@ -1,0 +1,104 @@
+.footer {
+    background: #FFFFFF;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 8rem;
+
+    @media (max-width: $md3+px) {
+        padding-top: 4rem;
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem 4rem;
+        margin-bottom: 8rem;
+
+        @media (max-width: $md3+px) {
+            flex-direction: column;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__col {
+        flex: 1 1 auto;
+        &--1 {
+            max-width: 23.4rem;
+        }
+        &--2 {
+            max-width: 31.2rem;
+        }
+        &--3 {
+            max-width: 48.6rem;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 12.3rem;
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__text {
+        color: $titleColor;
+    }
+
+    &__title {
+    }
+
+    &__contact {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+
+    &__contact-item {
+        display: flex;
+        gap: 1.6rem;
+        color: inherit;
+
+        & i {
+            color: $textColorSecondary;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__form {
+        & .cta__form-text a {
+            color: #009AA6;
+        }
+    }
+
+    &__bottom {
+        padding: 2.4rem 0;
+        border-top: 1px solid #CCCCCC;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2.4rem 6.5rem;
+    }
+
+    &__copy {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4rem 3.2rem;
+
+        & p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4rem 6.5rem;
+    }
+}

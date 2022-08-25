@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Elmbridge</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+	<div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+	<div class="main-wrapper">
+		<header class="header" data-header>
+    <div class="container header__body">
+        <div class="header__logo">
+            <a href="#">
+                <img src="img/logo/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="header__menu menu">
+            <ul class="menu__list">
+                <li>
+                    <a href="#" class="menu__link current-menu-item">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">About Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link ">About Elmbridge Mencap</a></li>
+                        <li><a href="#" class="menu__link ">Our People</a></li>
+                        <li><a href="#" class="menu__link ">Our History</a></li>
+                        <li><a href="#" class="menu__link ">Our Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Burview Hall</a>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">What’s On</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Support Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Donate</a></li>
+                        <li><a href="#" class="menu__link">Sponsor</a></li>
+                        <li><a href="#" class="menu__link">Staff & Volunteer Opportunities</a></li>
+                        <li><a href="#" class="menu__link">Fundraise</a></li>
+                        <li><a href="#" class="menu__link">Gift in Will</a></li>
+                        <li><a href="#" class="menu__link">Membership</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Help & Advice</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Our Blog</a></li>
+                        <li><a href="#" class="menu__link">Useful links & information</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Get In Touch</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="header__btn btn-default btn-default--second btn-default--w-auto">
+            DONATE
+        </a>
+        <div class="header__burger burger" data-action="open-mobile-menu">
+            <span class="burger__cross"></span>
+            <span class="burger__cross"></span>
+            <span class="burger__cross"></span>
+            <span class="burger__cross"></span>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu>
+    <div class="menu">
+        <div class="menu__head">
+            <div class="menu__logo">
+                <a href="#">
+                    <img src="img/logo/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="menu__close" data-action="close-mobile-menu">
+                <span></span>
+            </div>
+
+        </div>
+        <div class="menu__scroll-wrap">
+
+            <ul class="menu__list">
+                <li>
+                    <a href="#" class="menu__link current-menu-item">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">About Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link ">About Elmbridge Mencap</a></li>
+                        <li><a href="#" class="menu__link ">Our People</a></li>
+                        <li><a href="#" class="menu__link ">Our History</a></li>
+                        <li><a href="#" class="menu__link ">Our Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Burview Hall</a>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">What’s On</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Support Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Donate</a></li>
+                        <li><a href="#" class="menu__link">Sponsor</a></li>
+                        <li><a href="#" class="menu__link">Staff & Volunteer Opportunities</a></li>
+                        <li><a href="#" class="menu__link">Fundraise</a></li>
+                        <li><a href="#" class="menu__link">Gift in Will</a></li>
+                        <li><a href="#" class="menu__link">Membership</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Help & Advice</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Our Blog</a></li>
+                        <li><a href="#" class="menu__link">Useful links & information</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Get In Touch</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+		<!-- == // TOP LINE ================== -->
+
+		<main class="_page home-page" data-padding-top-header-size>
+			<div class="padding-wrap pt-0">
+				<div class="container">
+					<section class="promo-header">
+    <div class="promo-header__col-1">
+        <h1 class="promo-header__title title-2">
+            We help enrich the lives of all people with learning disabilities.
+        </h1>
+        <div class="promo-header__text text-sm">
+            <p>
+                Elmbridge Mencap supports children and adults who have learning disabilities, together with their parents and carers in the Elmbridge and surrounding areas. We are here to offer help and advice in a practical way.
+            </p>
+        </div>
+        <a href="#" class="promo-header__btn btn-default">ABOUT ELMBRIDGE MENCAP</a>
+    </div>
+    <div class="promo-header__col-2">
+        <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="promo-header__video">
+            <div class="promo-header__video-poster ibg">
+                <img src="img/photo/promo-header-img.jpg" alt="">
+            </div>
+            <div class="promo-header__video-icon">
+                <i class="icon-play"></i>
+            </div>
+        </a>
+    </div>
+</section>
+				</div>
+			</div>
+			<div class="padding-wrap">
+				<section class="regular-activites">
+					<div class="regular-activites__bg bg">
+						<div class="bg__top">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+								</svg>
+								
+
+						</div>
+						<div class="bg__main"></div>
+						<div class="bg__bottom">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+								</svg>
+						</div>
+					</div>
+					<div class="regular-activites__content container">
+						<div class="regular-activites__head">
+							<div class="regular-activites__head-inner">
+								<h2 class="regular-activites__title title-2 mb-16">
+									Our regular activities
+								</h2>
+								<div class="regular-activites__text text-sm last">
+									We run activities and clubs at Burview Hall for children and adults with learning
+									disabilities. Below are a few regular activites we run.
+								</div>
+							</div>
+							<a href="#" class="btn-default btn-default--w-auto">VIEW WHAT’S ON</a>
+						</div>
+						<div class="regular-activites__body">
+							<ul class="regular-activites__list">
+								<li>
+									<a href="#" class="regular-activites-card">
+										<div class="regular-activites-card__img ibg">
+											<img src="img/photo/regular-activites-card-img-1.jpg" alt="">
+										</div>
+										<div class="regular-activites-card__inner text">
+											<h5 class="regular-activites-card__title title-5">
+												Youth Club
+											</h5>
+											<div class="regular-activites-card__date">
+												<strong>Alternate</strong> Wednesday evenings 7-9pm
+											</div>
+											<div class="regular-activites-card__text">
+												An activity club for young people aged 16—25 with learning disabilities.
+												Alternate Wednesdays 7-9pm.
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="regular-activites-card">
+										<div class="regular-activites-card__img ibg">
+											<img src="img/photo/regular-activites-card-img-2.jpg" alt="">
+										</div>
+										<div class="regular-activites-card__inner text">
+											<h5 class="regular-activites-card__title title-5">Nova Club</h5>
+											<div class="regular-activites-card__date">
+												<strong>Alternative</strong> Wednesday evenings 7-9pm
+											</div>
+											<div class="regular-activites-card__text">
+												A social club for adults with learning disabilities at the hall from 7-9pm on alternate Wednesdays
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="regular-activites-card">
+										<div class="regular-activites-card__img ibg">
+											<img src="img/photo/regular-activites-card-img-3.jpg" alt="">
+										</div>
+										<div class="regular-activites-card__inner text">
+											<h5 class="regular-activites-card__title title-5">
+												One to One Club
+											</h5>
+											<div class="regular-activites-card__date">
+												Thursday evenings 7:30-9pm
+											</div>
+											<div class="regular-activites-card__text">
+												A fun activity social club for adults with learning disabilities
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="regular-activites-card">
+										<div class="regular-activites-card__img ibg">
+											<img src="img/photo/regular-activites-card-img-4.jpg" alt="">
+										</div>
+										<div class="regular-activites-card__inner text">
+											<h5 class="regular-activites-card__title title-5">
+												Cinema Nights
+											</h5>
+											<div class="regular-activites-card__date">
+												<strong>Monthly</strong> on a Saturday evening
+											</div>
+											<div class="regular-activites-card__text">
+												Held at the hall once a month for adults with learning disabilites.
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="regular-activites-card">
+										<div class="regular-activites-card__img ibg">
+											<img src="img/photo/regular-activites-card-img-5.jpg" alt="">
+										</div>
+										<div class="regular-activites-card__inner text">
+											<h5 class="regular-activites-card__title title-5">
+												Family Fun
+											</h5>
+											<div class="regular-activites-card__date">
+												<strong>Monthly</strong> on a saturday afternoon
+											</div>
+											<div class="regular-activites-card__text">
+												These sessions are for set up for families who have a disabled child, or
+												children, to attend as a family, with any siblings, giving them the
+												opportunity to socialise and enjoy the facilities at the Hall.
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="padding-wrap">
+				<div class="container">
+					<section class="place-info">
+						<div class="place-info__col-1">
+							<div class="place-info__images">
+								<a href="img/photo/place-info-img-1-3x.jpg" data-fancybox class="place-info__img place-info__img--1 ibg">
+									<img src="img/photo/place-info-img-1.jpg" alt="">
+								</a>
+								<a href="img/photo/place-info-img-2-3x.jpg" data-fancybox class="place-info__img place-info__img--2 ibg">
+									<img src="img/photo/place-info-img-2.jpg" alt="">
+								</a>
+								<a href="img/photo/place-info-img-3-3x.jpg" data-fancybox class="place-info__img place-info__img--3 ibg">
+									<img src="img/photo/place-info-img-3.jpg" alt="">
+								</a>
+								<a href="img/photo/place-info-img-4-3x.jpg" data-fancybox class="place-info__img place-info__img--4 ibg">
+									<img src="img/photo/place-info-img-4.jpg" alt="">
+								</a>
+								<a href="img/photo/place-info-img-5-3x.jpg" data-fancybox class="place-info__img place-info__img--5 ibg">
+									<img src="img/photo/place-info-img-5.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="place-info__col-2">
+							<h2 class="place-info__title title-2 mb-24">
+								Burview Hall
+							</h2>
+							<div class="place-info__text last text-sm mb-24">
+								<p>
+									The building has a large hall with kitchen, a games room and two sensory rooms providing sensory tactile areas.  These are particularly beneficial for children and adults with profound learning disabilities.  They can be hired on an hourly basis by groups, schools or individuals, providing a benefit to those with a learning or other disability.
+								</p>
+							</div>
+							<a href="#" class="btn-default">MORE ABOUT THE HALL</a>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="padding-wrap">
+				<section class="day-service">
+					<div class="day-service__bg bg">
+						<div class="bg__top">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+								</svg>
+								
+
+						</div>
+						<div class="bg__main"></div>
+						<div class="bg__bottom">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+								</svg>
+						</div>
+					</div>
+					<div class="day-service__body container">
+						<div class="day-service__col-1">
+							<h2 class="day-service__title title-2 mb-24">
+								Our day service
+							</h2>
+							<div class="day-service__text texs-sm last mb-24">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc velit orci, molestie at eleifend placerat, pretium at eros. Phasellus porttitor euismod efficitur. In euismod dui vitae gravida varius. Nulla consequat ante tellus, eu dictum turpis condimentum nec. Proin accumsan tortor a lobortis imperdiet. Donec semper facilisis lacus rutrum lacinia. In et scelerisque tortor. Nunc in facilisis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu fermentum lectus, quis euismod neque.
+								</p>
+							</div>
+							<a href="#" class="btn-default">
+								FIND OUT MORE ABOUT THE DAY SERVICE
+							</a>
+						</div>
+						<div class="day-service__col-2">
+							<div class="day-service__img">
+								<svg width="417" height="439" viewBox="0 0 417 439" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M279.233 372.73C358.769 350.038 417 276.819 417 190C417 85.0659 331.934 0 227 0C122.066 0 37 85.0659 37 190C37 281.103 101.119 357.231 186.692 375.716C207.122 397.293 253.44 428.581 296.666 418.865C297.006 418.789 297.17 418.403 296.979 418.112C290.726 408.619 279.622 389.044 279.233 372.73Z" fill="#A6224D" fill-opacity="0.3"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M242.233 390.73C321.769 368.038 380 294.819 380 208C380 103.066 294.934 18 190 18C85.0659 18 0 103.066 0 208C0 299.103 64.1195 375.231 149.692 393.716C170.122 415.293 216.44 446.581 259.666 436.865C260.006 436.789 260.17 436.403 259.979 436.112C253.726 426.619 242.622 407.044 242.233 390.73Z" fill="#AFA935" fill-opacity="0.3"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M266.233 384.73C345.769 362.038 404 288.819 404 202C404 97.0659 318.934 12 214 12C109.066 12 24 97.0659 24 202C24 293.103 88.1195 369.231 173.692 387.716C194.122 409.293 240.44 440.581 283.666 430.865C284.006 430.789 284.17 430.403 283.979 430.112C277.726 420.619 266.622 401.044 266.233 384.73Z" fill="url(#pattern0)"/>
+									<defs>
+									<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+									<use xlink:href="#image0_2398_181" transform="translate(-0.484064) scale(0.0007688 0.000694444)"/>
+									</pattern>
+									<image id="image0_2398_181" width="2560" height="1440" xlink:href="img/photo/promo-header-img.jpg"/>
+									</defs>
+									</svg>									
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="padding-wrap">
+				<section class="blog-preview">
+					<div class="blog-preview__bg bg">
+						<div class="bg__top">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+								</svg>
+								
+
+						</div>
+						<div class="bg__main"></div>
+						<div class="bg__bottom">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+								</svg>
+						</div>
+					</div>
+					<div class="blog-preview__body container">
+						<h2 class="blog-preview__title title-2 text-center">Latest from the blog</h2>
+						<div class="blog-preview__row">
+							<ul class="main-grid">
+								<li>
+									<div class="card">
+    <div class="card__img ibg">
+        <a href="#">
+            <img src="img/photo/card-img-1.jpg" alt="">
+        </a>
+    </div>
+    <div class="card__body">
+        <div class="card__category text">
+            <a href="#">
+                Category
+            </a>
+        </div>
+        <h4 class="card__title title-4"><a href="#">
+            Our new sensory garden is now open!
+        </a></h4>
+        <div class="card__text text-sm">
+            Lorem ipsum dolor sit amet, consec tetur adipis cing elit, sed do eiusmod.
+        </div>
+        
+        <div class="card__date text">2, Sept 2020</div>
+        
+    </div>
+</div>
+								</li>
+								<li>
+									<div class="card">
+    <div class="card__img ibg">
+        <a href="#">
+            <img src="img/photo/card-img-2.jpg" alt="">
+        </a>
+    </div>
+    <div class="card__body">
+        <div class="card__category text">
+            <a href="#">
+                Category
+            </a>
+        </div>
+        <h4 class="card__title title-4"><a href="#">
+            Take a look behind the scenes of our Nova Club
+        </a></h4>
+        <div class="card__text text-sm">
+            Lorem ipsum dolor sit amet, consec tetur adipis cing elit, sed do eiusmod.
+        </div>
+        
+        <div class="card__date text">2, Sept 2020</div>
+        
+    </div>
+</div>
+								</li>
+								<li>
+									<div class="card">
+    <div class="card__img ibg">
+        <a href="#">
+            <img src="img/photo/card-img-3.jpg" alt="">
+        </a>
+    </div>
+    <div class="card__body">
+        <div class="card__category text">
+            <a href="#">
+                Category
+            </a>
+        </div>
+        <h4 class="card__title title-4"><a href="#">
+            Sed lacus elit, eleifend quis mattis id, malesuada id mi.
+        </a></h4>
+        <div class="card__text text-sm">
+            Lorem ipsum dolor sit amet, consec tetur adipis cing elit, sed do eiusmod.
+        </div>
+        
+        <div class="card__date text">2, Sept 2020</div>
+        
+    </div>
+</div>
+								</li>
+							</ul>
+						</div>
+						<div class="blog-preview__row">
+							<div class="cta">
+    <div class="cta__main">
+        <div class="cta__main-col-1">
+            <div class="cta__icon">
+                <img src="img/photo/cta-icon.svg" alt="">
+            </div>
+            <div class="cta__text-wrap">
+                <h3 class="cta__title title-3">
+                    Join our community
+                </h3>
+                <div class="cta__text text-sm last">
+                    Stay up to date with the latest from Elmbridge Mencap 
+                </div>
+            </div>
+        </div>
+        <div class="cta__main-col-2">
+            <form action="#">
+                <div class="cta__form">
+                    <input type="email" class="input cta__input" placeholder="Enter your email address">
+                    <button class="cta__submit btn-default btn-default--w-auto">SIGN UP</button>
+                </div>
+                <div class="cta__form-text text">
+                    By submitting your details you agree to our <a href="#">privacy notice</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="cta__bottom">
+        <h4 class="title-4">
+            Subscribe and follow on our social media platforms
+        </h4>
+        <ul class="social">
+            <li>
+                <a href="#">
+                    <img src="img/icons/instagram.svg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/icons/facebook.svg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="padding-wrap">
+				<div class="container">
+					<div class="action-banner">
+						<div class="action-banner__row-1">
+							<div class="action-banner__img">
+								<img src="img/photo/action-banner-img.png" alt="">
+							</div>
+							<div class="action-banner__inner">
+								<div class="action-banner__logos mb-16">
+									<img src="img/photo/action-banner-logo-1.png" alt="">
+									<img src="img/photo/action-banner-logo-2.png" alt="">
+								</div>
+								<div class="action-banner__text text-content text-sm mb-24 last">
+									We do not receive any support/subsidies from Mencap. We wholly rely on income from hall lettings, fundraising activities, membership subscriptions, donations and grant awards. Please consider using the <strong><a href="#">EASYFUNDRAISING</a></strong> website to buy anything online. You can also use <strong><a href="#">smile.amazon.co.uk</a></strong> to donate 0.5% of your Amazon purchases - many thanks!
+								</div>
+								<div class="action-banner__buttons">
+									<a href="#" class="btn-default">DONATE</a>
+									<a href="#" class="btn-default">FIND OUT MORE</a>
+								</div>
+							</div>
+						</div>
+						<div class="action-banner__row-2">
+							<div class="action-banner__join-box">
+								<div class="action-banner__join-box-col-1">
+									<h4 class="action-banner__join-box-title title-4 mb-16">
+										Want to join Elmbridge Mencap?
+									</h4>
+									<div class="action-banner__join-box-text text last">
+										We have a board of trustees that meet regualarly, and a few members of staff to help keep Elmbridge Mencap running. Want to join our team?
+									</div>
+								</div>
+								<div class="action-banner__join-box-col-2">
+									<a href="#" class="btn-default">VIEW OPPORTUNITIES</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap pb-0">
+				<div class="carousel">
+					<div class="carousel__bg bg">
+						<div class="bg__top">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+								</svg>
+								
+
+						</div>
+						<div class="bg__main"></div>
+						<div class="bg__bottom">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+								</svg>
+						</div>
+					</div>
+					<div class="carousel__body container">
+						<h2 class="carousel__title title-2 text-center mb-16">
+							Stories from those who have visited
+						</h2>
+						<div class="carousel__text text-center text-sm last">
+							Some text here...
+						</div>
+						<div class="carousel__slider swiper" data-slider="carousel">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="testimonial-card">
+										<div class="testimonial-card__photo ibg">
+											<img src="img/photo/author.png" alt="">
+										</div>
+										<div class="testimonial-card__text text-sm last">
+											Nulla eget accumsan enim. Donec sapien quam, malesuada vel tempus vel, aliquet nec risus. Nullam sed metus rutrum, lobortis est a, molestie nunc. Vivamus sed risus ut purus accumsan tempor eu ac augue. Duis porttitor consectetur metus sed tincidunt. Praesent mattis lorem eu urna feugiat consequat.
+										</div>
+										<hr class="testimonial-card__hr">
+										<div class="testimonial-card__author title-5">
+											Clay Johnson
+										</div>
+										<div class="testimonial-card__position text">
+											Regular attendee
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="testimonial-card">
+										<div class="testimonial-card__photo ibg">
+											<img src="img/photo/author.png" alt="">
+										</div>
+										<div class="testimonial-card__text text-sm last">
+											Nulla eget accumsan enim. Donec sapien quam, malesuada vel tempus vel, aliquet nec risus. Nullam sed metus rutrum, lobortis est a, molestie nunc. Vivamus sed risus ut purus accumsan tempor eu ac augue. Duis porttitor consectetur metus sed tincidunt. Praesent mattis lorem eu urna feugiat consequat.
+										</div>
+										<hr class="testimonial-card__hr">
+										<div class="testimonial-card__author title-5">
+											Clay Johnson
+										</div>
+										<div class="testimonial-card__position text">
+											Regular attendee
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="testimonial-card">
+										<div class="testimonial-card__photo ibg">
+											<img src="img/photo/author.png" alt="">
+										</div>
+										<div class="testimonial-card__text text-sm last">
+											Nulla eget accumsan enim. Donec sapien quam, malesuada vel tempus vel, aliquet nec risus. Nullam sed metus rutrum, lobortis est a, molestie nunc. Vivamus sed risus ut purus accumsan tempor eu ac augue. Duis porttitor consectetur metus sed tincidunt. Praesent mattis lorem eu urna feugiat consequat.
+										</div>
+										<hr class="testimonial-card__hr">
+										<div class="testimonial-card__author title-5">
+											Clay Johnson
+										</div>
+										<div class="testimonial-card__position text">
+											Regular attendee
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="testimonial-card">
+										<div class="testimonial-card__photo ibg">
+											<img src="img/photo/author.png" alt="">
+										</div>
+										<div class="testimonial-card__text text-sm last">
+											Nulla eget accumsan enim. Donec sapien quam, malesuada vel tempus vel, aliquet nec risus. Nullam sed metus rutrum, lobortis est a, molestie nunc. Vivamus sed risus ut purus accumsan tempor eu ac augue. Duis porttitor consectetur metus sed tincidunt. Praesent mattis lorem eu urna feugiat consequat.
+										</div>
+										<hr class="testimonial-card__hr">
+										<div class="testimonial-card__author title-5">
+											Clay Johnson
+										</div>
+										<div class="testimonial-card__position text">
+											Regular attendee
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- == FOOTER ================== -->
+		<footer class="footer">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__col footer__col--1">
+                <div class="footer__logo mb-24">
+                    <a href="#">
+                        <img src="img/logo/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="footer__text text mb-32">
+                    We help enrich the lives of all people with learning disabilities.
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/instagram.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/facebook.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--2">
+                <div class="footer__title title-5 mb-24">
+                    Get in touch
+                </div>
+                <ul class="footer__contact">
+                    <li>
+                        <div class="footer__contact-item">
+                            <i class="icon-marker"></i>
+                            Burview Hall, Queens Road, Walton-on-Thames, Surrey KT12 5AB
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__contact-item">
+                            <i class="icon-phone"></i>
+                            01932 221304
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__contact-item">
+                            <i class="icon-email"></i>
+                            elmbridgemencap@btconnect.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--3">
+                <div class="footer__title title-5 mb-24">
+                    Join our Newsletter
+                </div>
+                <div class="footer__form">
+                    <form action="#">
+                        <div class="cta__form">
+                            <input type="email" class="input cta__input" placeholder="Enter your email address">
+                            <button class="cta__submit btn-default btn-default--w-auto">SIGN UP</button>
+                        </div>
+                        <div class="cta__form-text text">
+                            By submitting your details you agree to our <a href="#">privacy notice</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__copy text-sm">
+                <p>Company limited by guarantee (4504051), Charity Number: 1094666</p>
+                <p>Website by Studio Duo</p>
+            </div>
+            <div class="footer__links text">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Term of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+		<!-- == // FOOTER ================== -->
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+</body>
+
+</html>
