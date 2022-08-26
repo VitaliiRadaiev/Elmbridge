@@ -1,0 +1,30 @@
+<div class="hero">
+    <div class="hero__bg bg">
+        <div class="bg__top">
+            <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+                </svg>
+        </div>
+        <div class="bg__main"></div>
+        <div class="bg__bottom">
+            <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+                </svg>
+        </div>
+    </div>
+    <div class="hero__body container last">
+        <div class="hero__breadcrumbs">
+            <ul class="breadcrumbs text-sm"> 
+                @@for (var i = 0; i < breadcrumbs.length; i++) { <li>`+breadcrumbs[i]+`</li>
+                    }
+            </ul>
+        </div>
+        <h1 class="hero__title title-2 text-center">@@title</h1>
+
+        @@if (text) {
+            <div class="hero__text text-sm text-center">
+                @@text
+            </div>
+        }
+    </div>
+</div>

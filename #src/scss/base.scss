@@ -346,6 +346,27 @@ figure {
 	}
 }
 
+.link {
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+
+	&:after {
+		content: "\e90c";
+		font-family: 'icomoon' !important;
+		color: #7AABDE;
+		font-size: 3rem;
+		font-weight: 400;
+		margin-left: 1.2rem;
+		transition: all .2s ease;
+	}
+
+	&:hover {
+		&::after {
+			color: inherit;
+		}
+	}
+}
 
 [data-padding-top-header-size] {
 	padding-top: 9.6rem;

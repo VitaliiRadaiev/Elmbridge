@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Elmbridge</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        <header class="header" data-header>
+    <div class="container header__body">
+        <div class="header__logo">
+            <a href="#">
+                <img src="img/logo/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="header__menu menu">
+            <ul class="menu__list">
+                <li>
+                    <a href="#" class="menu__link current-menu-item">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">About Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link ">About Elmbridge Mencap</a></li>
+                        <li><a href="#" class="menu__link ">Our People</a></li>
+                        <li><a href="#" class="menu__link ">Our History</a></li>
+                        <li><a href="#" class="menu__link ">Our Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Burview Hall</a>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">What’s On</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Support Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Donate</a></li>
+                        <li><a href="#" class="menu__link">Sponsor</a></li>
+                        <li><a href="#" class="menu__link">Staff & Volunteer Opportunities</a></li>
+                        <li><a href="#" class="menu__link">Fundraise</a></li>
+                        <li><a href="#" class="menu__link">Gift in Will</a></li>
+                        <li><a href="#" class="menu__link">Membership</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Help & Advice</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Our Blog</a></li>
+                        <li><a href="#" class="menu__link">Useful links & information</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Get In Touch</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="header__btn btn-default btn-default--second btn-default--w-auto">
+            DONATE
+        </a>
+        <div class="header__burger burger" data-action="open-mobile-menu">
+            <span class="burger__cross"></span>
+            <span class="burger__cross"></span>
+            <span class="burger__cross"></span>
+            <span class="burger__cross"></span>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu>
+    <div class="menu">
+        <div class="menu__head">
+            <div class="menu__logo">
+                <a href="#">
+                    <img src="img/logo/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="menu__close" data-action="close-mobile-menu">
+                <span></span>
+            </div>
+
+        </div>
+        <div class="menu__scroll-wrap">
+
+            <ul class="menu__list">
+                <li>
+                    <a href="#" class="menu__link current-menu-item">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">About Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link ">About Elmbridge Mencap</a></li>
+                        <li><a href="#" class="menu__link ">Our People</a></li>
+                        <li><a href="#" class="menu__link ">Our History</a></li>
+                        <li><a href="#" class="menu__link ">Our Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Burview Hall</a>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">What’s On</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Support Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Donate</a></li>
+                        <li><a href="#" class="menu__link">Sponsor</a></li>
+                        <li><a href="#" class="menu__link">Staff & Volunteer Opportunities</a></li>
+                        <li><a href="#" class="menu__link">Fundraise</a></li>
+                        <li><a href="#" class="menu__link">Gift in Will</a></li>
+                        <li><a href="#" class="menu__link">Membership</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu__link">Help & Advice</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="menu__link">Our Blog</a></li>
+                        <li><a href="#" class="menu__link">Useful links & information</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu__link">Get In Touch</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+        <!-- == // TOP LINE ================== -->
+
+        <main class="_page about-page" data-padding-top-header-size>
+
+            <div class="hero">
+    <div class="hero__bg bg">
+        <div class="bg__top">
+            <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+                </svg>
+        </div>
+        <div class="bg__main"></div>
+        <div class="bg__bottom">
+            <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+                </svg>
+        </div>
+    </div>
+    <div class="hero__body container last">
+        <div class="hero__breadcrumbs">
+            <ul class="breadcrumbs text-sm"> 
+                 <li><a href="#">Home</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li>About Elmbridge Mencap</li>
+                    
+            </ul>
+        </div>
+        <h1 class="hero__title title-2 text-center">Making the Most of life</h1>
+
+        
+    </div>
+</div>
+
+            <div class="padding-wrap">
+                <div class="container">
+                    <div class="text-images-tile">
+                        <div class="text-images-tile__row">
+                            <div class="text-img-item text-img-item--img-left">
+
+                                <div class="text-img-item__text-wrap">
+                                    <h3 class="text-img-item__title title-3 mb-16">
+                                        About Elmbridge Mencap
+                                    </h3>
+                                    <div class="text-img-item__text text-content text-sm mb-24 last">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra at
+                                            massa ut vehicula. Maecenas condimentum lacinia turpis id condimentum.
+                                            Maecenas ac nisl vitae enim accumsan sagittis. Sed lacus elit, eleifend quis
+                                            mattis id, malesuada id mi. Vivamus malesuada aliquet sem eu viverra. Donec
+                                            tincidunt egestas accumsan. Sed tincidunt sodales ligula non auctor.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-img-item__img-wrap">
+                                    <div class="text-img-item__img ibg">
+                                        <img src="img/photo/about-img-1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-images-tile__row">
+                            <div class="text-img-item text-img-item--img-right">
+
+                                <div class="text-img-item__text-wrap">
+                                    <h3 class="text-img-item__title title-3 mb-16">
+                                        The Elmbride Mencap Story
+                                    </h3>
+                                    <div class="text-img-item__text text-content text-sm mb-24 last">
+                                        <p>
+                                            In 1946 the late Judy Fryd, who received the M.B.E. for her services to
+                                            Royal Mencap, wrote a letter to Nursery World magazine asking for other
+                                            people in the same situation as her (caring for a mentally handicapped
+                                            child) to get in touch to try and make their children’s life more
+                                            interesting. A tabloid newspaper ran the story and she was overwhelmed with
+                                            the response she received. Along with three other mothers, they formed The
+                                            Association of Parents of Backward Children.
+                                        </p>
+                                        <p>
+                                            In 1955 this was changed to The National Society for Mentally Handicapped
+                                            Children, and again later the word Adults was added. 1955 was also the year
+                                            that the Walton and Weybridge branch, later to be Elmbridge Mencap, was
+                                            formed by Elsie and Tom Baker who lived in Walton. Note, that although
+                                            affiliated to Royal Mencap, Elmbridge Mencap work independently at a local
+                                            level. We receive no financial support from Royal Mencap.
+                                        </p>
+                                    </div>
+                                    <a href="#" class="link">
+                                        Find out more about our history
+                                    </a>
+                                </div>
+                                <div class="text-img-item__img-wrap">
+                                    <div class="text-img-item__img ibg">
+                                        <img src="img/photo/about-img-2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="padding-wrap">
+                <div class="container">
+                    <ul class="main-grid color-simple-cards">
+                        <li>
+                            <div class="simple-card">
+                                <div class="simple-card__title text-sm">OUR VISION</div>
+                                <div class="simple-card__text text-md">
+                                    We help enrich the lives of all people with learning disabilites
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="simple-card">
+                                <div class="simple-card__title text-sm">Our Mission</div>
+                                <div class="simple-card__text text-md">
+                                    There is still so much to do so that people with a learning disability have the same
+                                    rights as everyone else and are treated equally in society.
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="simple-card">
+                                <div class="simple-card__title text-sm">Our Values</div>
+                                <div class="simple-card__text text-md">
+                                    <ul>
+                                        <li>
+                                            &bull; We are passionate about making the world a better place
+                                        </li>
+                                        <li>
+                                            &bull; We are inclusive of everyone
+                                        </li>
+                                        <li>
+                                            &bull; We are brave and try new things
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="padding-wrap">
+                <div class="container">
+                    <div class="cta-box cta-box--second">
+    <div class="cta-box__col-1">
+        <h4 class="cta-box__title title-4 mb-16">
+            Burview hall
+        </h4>
+        <div class="cta-box__text text last">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra.
+        </div>
+    </div>
+    <div class="cta-box__col-2">
+        <a href="#" class="btn-default">TAKE A PEAK</a>
+    </div>
+</div>
+                </div>
+            </div>
+
+            <div class="padding-wrap pb-0" data-parallax>
+                <div class="container">
+                    <div class="team-preview">
+                        <div class="team-preview__photo team-preview__photo--1 ibg layer" data-depth="0.10">
+                            <img src="img/photo/team-preview-img-1.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--2 ibg layer" data-depth="0.25">
+                            <img src="img/photo/team-preview-img-2.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--3 ibg layer" data-depth="0.10">
+                            <img src="img/photo/team-preview-img-3.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--4 ibg layer" data-depth="0.10">
+                            <img src="img/photo/team-preview-img-4.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--5 ibg layer" data-depth="0.15">
+                            <img src="img/photo/team-preview-img-5.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--6 ibg layer" data-depth="0.30">
+                            <img src="img/photo/team-preview-img-6.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--7 ibg layer" data-depth="0.10">
+                            <img src="img/photo/team-preview-img-7.jpg" alt="">
+                        </div>
+                        <div class="team-preview__photo team-preview__photo--8 ibg layer" data-depth="0.20">
+                            <img src="img/photo/team-preview-img-8.jpg" alt="">
+                        </div>
+
+                        <div class="team-preview__dot team-preview__dot--1 layer" data-depth="0.05"></div>
+                        <div class="team-preview__dot team-preview__dot--2 layer" data-depth="0.1"></div>
+                        <div class="team-preview__dot team-preview__dot--3 layer" data-depth="0.05"></div>
+                        <div class="team-preview__dot team-preview__dot--4 layer" data-depth="0.1"></div>
+                        <div class="team-preview__dot team-preview__dot--5 layer" data-depth="0.05"></div>
+
+                        <div class="team-preview__text-wrap text-center">
+                            <h4 class="team-preview__title title-4 mb-16">Meet the team and volunteers</h4>
+                            <div class="team-preview__text text-sm mb-32">
+                                Elmbridge Mencap is mainly run by volunteers who devote a lot of time to fundraising through organising Christmas Fairs, Jumble Sales and Cinema Nights. A number of staff are employed to assist with the running of the hall, club organisation and management of the Day Service.
+                            </div>
+                            <a href="#" class="btn-default">MEET THE TEAM AND VOLUNTEERS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__col footer__col--1">
+                <div class="footer__logo mb-24">
+                    <a href="#">
+                        <img src="img/logo/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="footer__text text mb-32">
+                    We help enrich the lives of all people with learning disabilities.
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/instagram.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/facebook.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--2">
+                <div class="footer__title title-5 mb-24">
+                    Get in touch
+                </div>
+                <ul class="footer__contact">
+                    <li>
+                        <div class="footer__contact-item">
+                            <i class="icon-marker"></i>
+                            Burview Hall, Queens Road, Walton-on-Thames, Surrey KT12 5AB
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__contact-item">
+                            <i class="icon-phone"></i>
+                            01932 221304
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__contact-item">
+                            <i class="icon-email"></i>
+                            elmbridgemencap@btconnect.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--3">
+                <div class="footer__title title-5 mb-24">
+                    Join our Newsletter
+                </div>
+                <div class="footer__form">
+                    <form action="#">
+                        <div class="cta__form">
+                            <input type="email" class="input cta__input" placeholder="Enter your email address">
+                            <button class="cta__submit btn-default btn-default--w-auto">SIGN UP</button>
+                        </div>
+                        <div class="cta__form-text text">
+                            By submitting your details you agree to our <a href="#">privacy notice</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__copy text-sm">
+                <p>Company limited by guarantee (4504051), Charity Number: 1094666</p>
+                <p>Website by Studio Duo</p>
+            </div>
+            <div class="footer__links text">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Term of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+        <!-- == // FOOTER ================== -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+</body>
+
+</html>

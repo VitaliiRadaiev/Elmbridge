@@ -314,19 +314,12 @@
 							</div>
 						</div>
 						<div class="action-banner__row-2">
-							<div class="action-banner__join-box">
-								<div class="action-banner__join-box-col-1">
-									<h4 class="action-banner__join-box-title title-4 mb-16">
-										Want to join Elmbridge Mencap?
-									</h4>
-									<div class="action-banner__join-box-text text last">
-										We have a board of trustees that meet regualarly, and a few members of staff to help keep Elmbridge Mencap running. Want to join our team?
-									</div>
-								</div>
-								<div class="action-banner__join-box-col-2">
-									<a href="#" class="btn-default">VIEW OPPORTUNITIES</a>
-								</div>
-							</div>
+							@@include('common/cta-box/_cta-box.html', {
+								"mode": "",
+								"title": "Want to join Elmbridge Mencap?",
+								"text": "We have a board of trustees that meet regualarly, and a few members of staff to help keep Elmbridge Mencap running. Want to join our team?",
+								"btnText": "VIEW OPPORTUNITIES"
+							})
 						</div>
 					</div>
 				</div>
@@ -425,6 +418,14 @@
 											Regular attendee
 										</div>
 									</div>
+								</div>
+							</div>
+							<div class="carousel__slider-controls">
+								<div class="carousel__slider-btn prev">
+									<i class="icon-circle-arrow-right"></i>
+								</div>
+								<div class="carousel__slider-btn next">
+									<i class="icon-circle-arrow-right"></i>
 								</div>
 							</div>
 						</div>

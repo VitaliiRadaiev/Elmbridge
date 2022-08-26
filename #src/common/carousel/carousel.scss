@@ -51,5 +51,42 @@
             }
         }
     }
+
+    &__slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.4rem;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+
+    &__slider-btn {
+        padding-top: 3.2rem;
+        color: #009AA6;
+        font-size: 3.2rem;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $secondColor;
+            }
+        }
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        &.prev {
+            & i {
+                display: inline-block;
+                transform: scale(-1, 1);
+            }
+        }
+    }
 }
 
