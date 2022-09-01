@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Elmbridge"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": ""
+        })
+        <!-- == // TOP LINE ================== -->
+
+        <main class="_page burview-hall-page" data-padding-top-header-size>
+            <div class="hero hero--second">
+                <div class="hero__bg bg">
+                    <div class="bg__top">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="bg__main ibg">
+                        <img src="img/photo/hero-bg.jpg" alt="">
+                    </div>
+                    <div class="bg__bottom">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z"
+                                fill="#F2F7FC" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero__body container last">
+                    <div class="hero__breadcrumbs">
+                        <ul class="breadcrumbs text-sm">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                Burview Hall
+                            </li>
+                        </ul>
+                    </div>
+                    <h1 class="hero__title title-2 text-center">Burview Hall</h1>
+                    <div class="hero__text text-sm text-center">
+                        The building has a large hall with kitchen, a games room and two sensory rooms providing sensory
+                        tactile areas. These are particularly beneficial for children and adults with profound learning
+                        disabilities. They can be hired on an hourly basis by groups, schools or individuals, providing
+                        a benefit to those with a learning or other disability.
+                    </div>
+                    <div class="hero__btn-wrap text-center">
+                        <a href="#" class="hero__btn btn-default btn-default--second btn-default--border btn-default--w-auto">MAKE AN ENQUIRY</a>
+                    </div>
+                </div>
+            </div>
+
+			<div class="padding-wrap pt-0">
+				<section class="facilities">
+					<div class="facilities__bg bg">
+						<div class="bg__top">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+								</svg>
+								
+
+						</div>
+						<div class="bg__main"></div>
+						<div class="bg__bottom">
+							<svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+								</svg>
+						</div>
+					</div>
+					<div class="facilities__body container">
+                        <h3 class="facilities__title title-3 text-center">
+                            Facilities at Burview Hall
+                        </h3>
+						<ul class="main-grid">
+                            <li>
+                                @@include('common/card/_card.html', {
+                                    "img": "img/photo/card-img-4.jpg",
+                                    "category": "The Sensory room",
+                                    "title": "Our new sensory garden is now open!",
+                                    "text": "Our larger sensory room  has a milky way wall hanging carpet; bubble tubes; soft seating; music; light wheels, fibre optics and soft day bed.  The room is available for hire for adults and children with learning disabilities.  It is wheelchair accessible and has a hoist",
+                                    "textSize": "text",
+                                    "date": false
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                    "img": "img/photo/card-img-5.jpg",
+                                    "category": "OASIS room",
+                                    "title": "Take a look behind the scenes of our Nova Club",
+                                    "text": "Feautring a milky way wall hanging carpet that creates a shimmering effect of continually changing colours; bubble tubes; soft seating; music; light wheels and fibre optics. The room is available for hire for adults with learning disabilities and those with dementia or stroke patients. A maximum of 6 people can be accommodated in the room.",
+                                    "textSize": "text",
+                                    "date": false
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                    "img": "img/photo/card-img-6.jpg",
+                                    "category": "A stimulating outside area to explore",
+                                    "title": "Sensory garden",
+                                    "text": "Our new safe and secure sensory garden is in an area of our woodlood. It is a place to stimulate the senses calmly and gently; using plants, layout, and specialist equipment to engage the senses of sight, sound, smell, tocuh and taste. The sensory garden has been specially designed for children and adults with learning disabilities and is a wonderful inclusive environment for all.",
+                                    "textSize": "text",
+                                    "date": false
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                    "img": "img/photo/card-img-7.jpg",
+                                    "category": "A fun place to socialise",
+                                    "title": "Games room",
+                                    "text": "The games room contains pool and snooker tables, table football, table tennis and darts.",
+                                    "textSize": "text",
+                                    "date": false
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                    "img": "img/photo/card-img-8.jpg",
+                                    "category": "Large hall",
+                                    "title": "Our new sensory garden is now open!",
+                                    "text": "The hall can accommodate approximately 100 people and is large enough for sports training.  It contains various sports equipment including indoor bowling.  It also has disco lights, stage lighting, an interactive floor and OMi-Beam equipment (unique audiovisual interactive lighting system).  Tables and chairs are provided.  A modern cinema system with loop induction has been installed. ",
+                                    "textSize": "text",
+                                    "date": false
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                    "img": "img/photo/card-img-9.jpg",
+                                    "category": "Tagline",
+                                    "title": "Kitchen",
+                                    "text": "Some informtion about the kitchen and what is there ...",
+                                    "textSize": "text",
+                                    "date": false
+                                })
+                            </li>
+                        </ul>
+					</div>
+				</section>
+			</div>
+
+            <div class="padding-wrap">
+                <div class="container">
+                    <div class="requirements">
+                        <div class="requirements__decor">
+                            <img src="img/photo/requirements-decor.png" alt="">
+                        </div>
+                        <div class="requirements__text-wrap last">
+                            <h3 class="title-3 mb-24">Access Requirements</h3>
+                            <div class="text-sm mb-24">
+                                The building is on one level and is fully accessible, with assisted showers for special care users and disabled toilets. There is a car park at the front of the building, with disabled parking spaces.
+                            </div>
+                            <a href="#" class="link">
+                                View on AccessAble
+                            </a>
+                        </div>
+                        <div class="requirements__logo">
+                            <img src="img/photo/requirements-logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

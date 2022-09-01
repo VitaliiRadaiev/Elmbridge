@@ -42,4 +42,41 @@
         margin: 0 auto;
         max-width: 60rem;
     }
+
+    &__btn-wrap {
+        padding-top: 2.4rem;
+        @media (min-width: 768px) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: -2.4rem;    
+            padding-top: 0;
+        }
+    }
+
+    &--second {
+        color: #fff;
+
+        & .hero__bg {
+            & .bg__main {
+                background: linear-gradient(0deg, rgba(0, 155, 164, 0.9), rgba(0, 155, 164, 0.9));
+
+                & img {
+                    opacity: 0.1;
+                }
+            }
+        }
+
+        & .breadcrumbs a {
+            color: #fff;
+        }
+
+        & .hero__title  {
+            color: inherit;
+        }
+
+        & .hero__text {
+            max-width: 75.4rem;
+        }
+    }
 }
