@@ -69,6 +69,23 @@ body {
 			color: $secondColor;
 		}
 	}
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #4e4e4e;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: #fff;
+	}
+	&::-webkit-scrollbar-track {
+		background: #fff;
+		border-radius: 10px;
+		box-shadow: inset 0px 0px 0px 0px #fff;
+	}
 }
 
 input,
@@ -221,6 +238,21 @@ figure {
 	}
 }
 
+.container-sm {
+	width: calc(100% - 100px);
+	max-width: 108.5rem !important;
+	margin: 0 auto;
+
+	@media (max-width: $md1+px) {
+		width: calc(100% - 64px);
+		max-width: none !important;
+	}
+
+	@media (max-width: $md3+px) {
+		width: calc(100% - 40px);
+	}
+}
+
 .padding-wrap {
 	padding: 4rem 0;
 
@@ -235,6 +267,10 @@ figure {
 	@media (max-width: $md3+px) {
 		padding-top: 4rem;
 	}
+}
+
+.p-40 {
+	padding-top: 4rem;
 }
 
 .mb-48 {
@@ -366,6 +402,23 @@ figure {
 			color: inherit;
 		}
 	}
+}
+
+.text-section {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 80.7rem;
+}
+
+hr {
+	width: 16rem;
+	height: 2px !important;
+	display: block;
+	background-color: $textColorThird;
+	margin: 0 auto;
+	border: none;
+	outline: none;
+	opacity: 1;
 }
 
 [data-padding-top-header-size] {

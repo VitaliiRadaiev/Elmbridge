@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Elmbridge"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": ""
+        })
+        <!-- == // TOP LINE ================== -->
+
+        <main class="_page about-page" data-padding-top-header-size>
+
+            @@include('common/hero/_hero.html', {
+            "breadcrumbs": ['<a href="#">Home</a>', '<a href="#">About Us</a>', 'Our History'],
+            "title": "Our History",
+            "text": false
+            })
+
+            <div class="padding-wrap pb-0">
+                <div class="container-sm">
+                    <ul class="history">
+                        <li>
+                            <div class="history__left">
+                                <div class="history__dot"></div>
+                                <div class="history__year">1946</div>
+                            </div>
+                            <div class="history__content">
+                                <div class="history__text-wrap text-content text-sm last">
+                                    <h4>
+                                        The orginisation is formed
+                                    </h4>
+                                    <p>
+                                        Judy Fryd (31 October 1909 – October 2000) a mother of a daughter, Felicity, born with a learning disability, formed 'The National Association of Parents of Backward Children' - which later became Mencap.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="history__left">
+                                <div class="history__dot"></div>
+                                <div class="history__year">1955</div>
+                            </div>
+                            <div class="history__content">
+                                <div class="history__text-wrap text-content text-sm last">
+                                    <h4>
+                                        Elsie and Thomas Baker establish ‘Association of Parents of Backward Children’.
+                                    </h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="history__left">
+                                <div class="history__dot"></div>
+                                <div class="history__year">1955</div>
+                            </div>
+                            <div class="history__content">
+                                <div class="history__text-wrap text-content text-sm last">
+                                    <h4>
+                                        Mrs Elsie Ness (Jean Rigden’s mother) joins the Association
+                                    </h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="history__left">
+                                <div class="history__dot"></div>
+                                <div class="history__year">????</div>
+                            </div>
+                            <div class="history__content">
+                                <div class="history__text-wrap text-content text-sm last">
+                                    <h4>
+                                        The Baker family are honoured
+                                    </h4>
+                                    <p>
+                                        The Baker family were honoured at a presentation at Walton Leigh (school?).  At the presentation were Mrs Elsie Baker, Miss Joyce Baker, Mrs Elsie Ness (Jean’s mother) and Mr Thomas Baker.
+                                    </p>
+                                </div>
+                                <div class="history__img ibg">
+                                    <img src="img/photo/history-img.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="history__left">
+                                <div class="history__dot"></div>
+                                <div class="history__year">Circa 1965</div>
+                            </div>
+                            <div class="history__content">
+                                <div class="history__text-wrap text-content text-sm last">
+                                    <h4>
+                                        Burview Hall (prefabricated) opened
+                                    </h4>
+                                    <p>
+                                        1st Burview Hall (prefabricated) opened for ‘Walton & Weybridge Society for Mentally Handicapped Children’ on Walton Charities land next to Ellesmere Hospital’s entrance.  It cost £5,500 and was formally opened by Mrs “Bunty” Haigh of St Martin’s School (in Rydens Road).  Seventy parents and guests attended.  Mr Thomas Baker (of Garrick Close) was the chairman or secretary.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-80"></div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>
