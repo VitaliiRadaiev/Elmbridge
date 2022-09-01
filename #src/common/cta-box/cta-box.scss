@@ -35,7 +35,9 @@
     }
 
     &--second {
-        background: rgba(230, 176, 18, 0.07);
+        background: #FDFAEE;
+        box-shadow: none;
+        border: 0.3rem solid #FFFFFF;
 
         & .cta-box__text  {
             color: $textColor;

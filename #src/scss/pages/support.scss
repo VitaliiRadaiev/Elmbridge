@@ -1,0 +1,121 @@
+.support-hero {
+    &__body {
+        display: flex;
+        gap: 4rem;
+
+        @media (max-width: $md2+px) {
+            display: block;
+        }
+    }
+
+    &__left {
+        flex: 1 1 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__right {
+        flex: 0 0 auto;
+        width: 60rem;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: $md3+px) {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__breadcrumbs {
+        & .breadcrumbs {
+            text-align: left;
+        }
+    }
+
+    &__title {
+        @media (min-width: 768px) {
+            max-width: 49.3rem;
+        }
+    }
+
+    &__text {
+
+        margin-bottom: 4rem;
+        @media (min-width: 768px) {
+            max-width: 49.3rem;
+            margin-bottom: 8rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        margin-right: -64rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4rem;
+
+        @media (max-width: $md3+px) {
+            margin-right: 0;
+        }
+
+        & > li {
+            flex: 0 1 calc(25% - (2.4rem * 3 / 4));
+
+            @media (max-width: $md3+px) {
+                flex: 0 1 calc(33.3333333% - (2.4rem * 2 / 3));
+            }
+
+            @media (max-width: 575.98px) {
+                flex: 0 1 100%;
+            }
+        }
+    }
+
+    &__item {
+        background: #ffffff;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+        min-height: 17.6rem;
+        height: 100%;
+        padding: 3.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 575.98px) {
+            text-align: center;
+            min-height: 12rem;
+        }
+    }
+
+    &__item-price {
+    }
+
+    &__item-title {
+        color: $secondColor;
+    }
+
+    &__img {
+        height: 0;
+        padding-bottom: 69%;
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+}
+
+
+.donate-section {
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+
+    & img {
+        width: 100%;
+        height: auto;
+    }
+}

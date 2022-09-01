@@ -249,7 +249,6 @@ figure {
 
 	@media (max-width: $md1+px) {
 		width: calc(100% - 64px);
-		max-width: none !important;
 	}
 
 	@media (max-width: $md3+px) {
@@ -265,7 +264,6 @@ figure {
 
 	@media (max-width: $md1+px) {
 		width: calc(100% - 64px);
-		max-width: none !important;
 	}
 
 	@media (max-width: $md3+px) {

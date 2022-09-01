@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Elmbridge"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": ""
+        })
+        <!-- == // TOP LINE ================== -->
+
+        <main class="_page support-page" data-padding-top-header-size>
+            <div class="p-80"></div>
+
+            <div class="container">
+                <div class="support-hero">
+                    <div class="support-hero__body">
+                        <div class="support-hero__left">
+                            <div class="support-hero__breadcrumbs">
+                                <ul class="breadcrumbs text-sm">
+                                    <li>
+                                        <a href="#">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Support Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        Donate
+                                    </li>
+                                </ul>
+                            </div>
+                            <h1 class="support-hero__title title-2 mb-24">
+                                How your donation can help
+                            </h1>
+                            <div class="support-hero__text text-sm">
+                                Every donation makes a difference – here are some examples of how your donation can
+                                help.
+                            </div>
+                            <ul class="support-hero__list" data-da=".support-hero__body,767.98,last">
+                                <li>
+                                    <div class="support-hero__item">
+                                        <div class="support-hero__item-price title-2">
+                                            £10
+                                        </div>
+                                        <div class="support-hero__item-title text">Can help XYZ</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="support-hero__item">
+                                        <div class="support-hero__item-price title-2">£20</div>
+                                        <div class="support-hero__item-title text">Can help XYZ</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="support-hero__item">
+                                        <div class="support-hero__item-price title-2">£50</div>
+                                        <div class="support-hero__item-title text">Can help XYZ</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="support-hero__right">
+                            <div class="support-hero__img ibg">
+                                <img src="img/photo/support-hero-img.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-80"></div>
+            
+            <div class="container">
+                <div class="donate-section">
+                    <img src="img/photo/donate-img.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="p-80"></div>
+
+            <div class="padding-wrap pb-0">
+                @@include('common/ways-to-support/_ways-to-support.html')
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>
