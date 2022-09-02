@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Elmbridge"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": ""
+        })
+        <!-- == // TOP LINE ================== -->
+
+        <main class="_page contact-page" data-padding-top-header-size>
+
+            <div class="contact-hero hero">
+                <div class="hero__bg bg">
+                    <div class="bg__top">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+                            </svg>
+                    </div>
+                    <div class="bg__main"></div>
+                    <div class="bg__bottom">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+                            </svg>
+                    </div>
+                </div>
+                <div class="hero__body container last">
+                    <div class="hero__breadcrumbs">
+                        <ul class="breadcrumbs text-sm"> 
+                            <li>
+                                <a href="#">
+                                    Home 
+                                </a>
+                            </li>
+                            <li>
+                                Get in touch
+                            </li>
+                        </ul>
+                    </div>
+                    <h1 class="hero__title title-2 text-center">
+                        Get in touch
+                    </h1>
+            
+                    <div class="hero__bottom">
+                        <div class="contact-hero__items">
+                            <a href="#" class="join-us__contact-box">
+                                <div class="join-us__contact-box-icon">
+                                    <i class="icon-phone"></i>
+                                </div>
+                                <div class="join-us__contact-box-inner text-sm">
+                                    <div class="join-us__contact-box-label">Phone Number</div>
+                                    <div class="join-us__contact-box-content">01932 221304</div>
+                                </div>
+                            </a>
+                            <a href="#" class="join-us__contact-box">
+                                <div class="join-us__contact-box-icon">
+                                    <i class="icon-email-second"></i>
+                                </div>
+                                <div class="join-us__contact-box-inner text-sm">
+                                    <div class="join-us__contact-box-label">Email</div>
+                                    <div class="join-us__contact-box-content">elmbridgemencap@btconnect.com</div>
+                                </div>
+                            </a>
+                            <div class="join-us__contact-box">
+                                <ul class="social">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/instagram.svg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/facebook.svg" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-80"></div>
+            <div class="container-sm">
+                <form action="#">
+                    <div class="contact-form form">
+                        <div class="form__items">
+                            <div class="form__item form__item--half">
+                                <label for="" class="form__label title-5">Your Name</label>
+                                <input type="text" class="input" placeholder="Enter your name here">
+                            </div>
+                            <div class="form__item form__item--half">
+                                <label for="" class="form__label title-5">Your Email Address</label>
+                                <input type="email" class="input" placeholder="Enter your email address">
+                            </div>
+                            <div class="form__item form__item--half" data-mask="9{*}">
+                                <label for="" class="form__label title-5">Your Phone Number</label>
+                                <input type="text" class="input" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form__item">
+                                <label for="" class="form__label title-5">Messages</label>
+                                <textarea class="textarea" placeholder="Write your messages here"></textarea>
+                            </div>
+                        </div>
+                        <button class="form__submit btn-default">SEND MESSAGE</button>
+                    </div>
+                </form>
+            </div>
+            <div class="p-80"></div>
+
+            <div class="contact">
+                <div class="contact__bg bg">
+                    <div class="bg__top">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="bg__main"></div>
+                    <div class="bg__bottom">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="contact__body container">
+                    <h3 class="contact__title title-3 text-center mb-8">
+                        Come visit us
+                    </h3>
+                    <div class="contact__text text-center mb-8 text-sm">
+                        Burview Hall, Queens Rd, Hersham, Walton-on-Thames KT12 5AB
+                    </div>
+                    <div class="contact__links text-content text-center text-sm">
+                        <strong><a href="#">Get Directions</a></strong>
+                    </div>
+                    <div class="contact__map" id="map"></div>
+                </div>
+            </div>
+            <script>
+                function initMap() {
+
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: 51.368167744713205, lng: -0.42906351615166094 },
+
+                        zoom: 14,
+
+                       // styles: 
+                    });
+
+                    var marker = new google.maps.Marker({
+
+                        position: { lat: 51.368167744713205, lng: -0.42906351615166094 },
+
+                        map: map,
+
+                        title: 'Burveiw Hall',
+                        label: '',
+
+                        // icon: 'img/contact/googlMarker.svg',
+                    });
+
+                }
+            </script>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&amp;callback=initMap&amp;libraries=&amp;v=weekly" defer=""></script>
+</body>
+
+</html>

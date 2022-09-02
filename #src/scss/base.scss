@@ -580,6 +580,16 @@ hr {
 
 // === TEXT CONTETN BLOCK ========================================================================
 .text-content {
+
+	&.text {
+		& p,
+		& ul,
+		& ol,
+		& figure {
+			margin-bottom: 1.5em;
+		}
+	}
+
 	& h1,
 	& h2,
 	& h3,
@@ -658,11 +668,13 @@ hr {
 	& figure {
 		display: block;
 		width: 100%;
-		margin: 5.6rem 0;
+		margin: 3.2rem 0;
 
 		@media (max-width: $md3+px) {
 			margin: 2.8rem 0;
 		}
+
+
 
 		& > img {
 			display: block;
@@ -677,6 +689,16 @@ hr {
 		& + h5,
 		& + h6 {
 			margin-top: 0rem !important;
+		}
+
+		&.text-center {
+			& > img {
+				display: inline-block;
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 	}
 
