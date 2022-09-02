@@ -154,6 +154,71 @@
                 </div>
             </div>
             <div class="p-80"></div>
+
+            <div class="carousel">
+                <div class="carousel__bg bg">
+                    <div class="bg__top">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="currentColor"/>
+                            </svg>
+                            
+
+                    </div>
+                    <div class="bg__main"></div>
+                    <div class="bg__bottom">
+                        <svg width="1440" height="43" viewBox="0 0 1440 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 37.978C0 37.978 287 0 720 0C1153 0 1440 37.978 1440 37.978V43H0V37.978Z" fill="#fff"/>
+                            </svg>
+                    </div>
+                </div>
+                <div class="carousel__body container">
+                    <h3 class="carousel__title title-3 text-center mb-16">
+                        Recent articles
+                    </h3>
+                    <div class="carousel__slider swiper" data-slider="carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-1.jpg",
+                                "category": "Category",
+                                "title": "Our new sensory garden is now open!",
+                                "text": "Lorem ipsum dolor sit amet, consec tetur adipis cing elit, sed do eiusmod.",
+                                "textSize": "text-sm",
+                                "date": "2, Sept 2020"
+                                })
+                            </div>
+                            <div class="swiper-slide">
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-2.jpg",
+                                "category": "Category",
+                                "title": "Take a look behind the scenes of our Nova Club",
+                                "text": "Lorem ipsum dolor sit amet, consec tetur adipis cing elit, sed do eiusmod.",
+                                "textSize": "text-sm",
+                                "date": "2, Sept 2020"
+                                })
+                            </div>
+                            <div class="swiper-slide">
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-3.jpg",
+                                "category": "Category",
+                                "title": "Sed lacus elit, eleifend quis mattis id, malesuada id mi.",
+                                "text": "Lorem ipsum dolor sit amet, consec tetur adipis cing elit, sed do eiusmod.",
+                                "textSize": "text-sm",
+                                "date": "2, Sept 2020"
+                                })
+                            </в>
+                        </div>
+                        <div class="carousel__slider-controls">
+                            <div class="carousel__slider-btn prev">
+                                <i class="icon-circle-arrow-right"></i>
+                            </div>
+                            <div class="carousel__slider-btn next">
+                                <i class="icon-circle-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- == FOOTER ================== -->

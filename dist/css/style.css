@@ -4279,6 +4279,7 @@ hr {
   position: relative;
   padding-top: 11.6rem;
   padding-bottom: 8rem;
+  overflow: hidden;
 }
 
 .carousel__bg {
@@ -6677,6 +6678,10 @@ hr {
 
   .carousel__slider .swiper-slide {
     width: auto;
+  }
+
+  .carousel__slider .swiper-slide .card {
+    width: 32rem;
   }
 
   .carousel__slider-controls {
