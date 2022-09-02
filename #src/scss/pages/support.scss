@@ -3,7 +3,7 @@
         display: flex;
         gap: 4rem;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: $md3+px) {
             display: block;
         }
     }
@@ -100,11 +100,46 @@
         color: $secondColor;
     }
 
+    &__bottom {
+        margin-top: auto;
+        margin-right: -64rem;
+        @media (max-width: $md3+px) {
+            margin-right: 0;
+        }
+    }
+
     &__img {
         height: 0;
         padding-bottom: 69%;
         border-radius: 2rem;
         overflow: hidden;
+    }
+
+    &--second {
+
+        & .support-hero__body {
+            gap: 3.2rem;
+        }
+        & .support-hero__left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & .support-hero__text {
+            margin-bottom: 2.4rem;
+            max-width: none;
+        }
+
+        & .support-hero__title {
+            max-width: none;
+        }
+
+        & .support-hero__right {
+            
+            @media (min-width: 768px) {
+                padding-bottom: 6rem;
+            }
+        }
     }
 }
 

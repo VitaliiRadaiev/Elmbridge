@@ -1,0 +1,224 @@
+.join-us {
+    position: relative;
+    padding-top: 11.8rem;
+    padding-bottom: 11.8rem;
+
+    @media (max-width: $md3+px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        color: #f2f7fc;
+
+        & .bg__main {
+            background-color: #f2f7fc;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        justify-content: space-between;
+
+        @media (max-width: $md3+px) {
+            display: block;
+        }
+    }
+
+    &__col-1 {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 2.4rem;
+            justify-content: center;
+        }
+
+        @media (max-width: $md4+px) {
+            gap: 2.4rem;
+        }
+    }
+
+    &__col-2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+
+        @media (max-width: $md3+px) {
+            justify-content: center;
+        }
+    }
+
+    &__photo {
+        flex: 0 0 auto;
+        height: 9.6rem;
+        width: 9.6rem;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 0.4rem solid rgba(156, 154, 0, 0.2);
+    }
+
+    &__text-wrap {
+    }
+
+    &__title {
+        margin-bottom: 0.8rem;
+    }
+
+    &__text {
+    }
+
+    &__contact-box {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        background: #ffffff;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+        padding: 1.6rem;
+        transition: all 0.3s ease;
+        align-self: center;
+
+        @media (max-width: $md4+px) {
+            flex: 0 1 100%;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+
+    &__contact-box-icon {
+        flex: 0 0 auto;
+        font-size: 2.4rem;
+        color: #7aabde;
+    }
+
+    &__contact-box-inner {
+    }
+
+    &__contact-box-label {
+        margin-bottom: 0.2rem;
+        color: $textColor;
+    }
+
+    &__contact-box-content {
+        font-weight: 700;
+    }
+}
+
+.sponsors-reviews {
+    &__title {
+        margin-bottom: 4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3.2rem;
+
+        @media (max-width: $md3+px) {
+            gap: 2.4rem;
+        }
+
+        & > li {
+            flex: 0 1 calc(50% - (3.2rem / 2));
+
+            @media (max-width: 575.98px) {
+                flex: 0 1 100%;
+            }
+        }
+    }
+}
+
+.questions {
+    &__title {
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        margin-bottom: 4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 2.4rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.accordion {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    & > li {
+        background: #ffffff;
+        border: 1px solid #7aabde;
+        border-radius: 1rem;
+        padding: 2.4rem 2.4rem 1.8rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__title {
+        position: relative;
+        transition: all .3s ease;
+        padding-right: 2.4rem;
+        font-weight: 700;
+        color: $titleColor;
+        cursor: pointer;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $secondColor;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: "\e900";
+            top: 50%;
+            right: -0.4rem;
+            font-family: 'icomoon' !important;
+            color: #009AA6;
+            font-size: 0.6rem;
+            transform: translateY(-50%);
+        }
+
+        &.active {
+            &:after {
+                transform: translateY(-50%) scale(1, -1);
+            }
+        }
+    }
+
+    &__text {
+        padding-top: 0.4rem;
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

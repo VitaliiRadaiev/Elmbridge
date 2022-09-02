@@ -256,7 +256,10 @@ class App {
 
 
 	componentsBeforeLoad() {
-
+		let articlePage = document.querySelector('.article-page');
+		if(articlePage) {
+			articlePage.closest('.main-wrapper').style.overflow = 'visible';
+		}
 	}
 
 	componentsAfterLoad() {

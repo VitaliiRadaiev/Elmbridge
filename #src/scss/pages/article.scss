@@ -1,0 +1,233 @@
+.article {
+    &__head {
+        margin-bottom: 4.8rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__breadcrambs {
+    }
+
+    &__title {
+    }
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.4rem 4rem;
+    }
+
+    &__meta-item {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        font-weight: 500;
+
+        & i {
+            color: #547ff3;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__body {
+        padding: 0 8.3rem;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            padding-right: 0;
+            padding-left: 6.3rem;
+        }
+    }
+
+    &__stikcy-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8.3rem;
+        height: 100%;
+
+        @media (max-width: $md3+px) {
+            width: 6.3rem;
+        }
+    }
+
+    &__main-img {
+        border-radius: 2rem;
+        overflow: hidden;
+        padding-bottom: 51.12%;
+        margin-bottom: 6.4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 80.6rem;
+        margin: 0 auto;
+    }
+
+    &__text {
+        margin-bottom: 6.4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    &__author {
+        background: #ffffff;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+        padding: 2.4rem;
+        gap: 2.4rem;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $md4+px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__author-img {
+        flex: 0 0 auto;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 0.4rem solid rgba(156, 154, 0, 0.2);
+    }
+
+    &__author-text-wrap {
+    }
+
+    &__author-label {
+        color: $textColorThird;
+        margin-bottom: 0.2rem;
+    }
+
+    &__author-name {
+    }
+
+    &__author-text {
+    }
+}
+
+.share {
+    position: sticky;
+    top: 11rem;
+
+    &__label {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        & > li {
+            flex: 0 0 auto;
+            &:not(:last-child) {
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        & img {
+            width: 4rem;
+            height: auto;
+        }
+
+        & a {
+            @media (min-width: 992px) {
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+.quote {
+    position: relative;
+    width: 100%;
+    max-width: 59.6rem;
+    padding-left: 2.8rem;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0.4rem;
+        background-color: $secondColor;
+    }
+
+    &:before {
+        content: "\e917";
+        font-family: "icomoon" !important;
+        display: block;
+        margin-bottom: 1.6rem;
+        font-size: 2.8rem;
+        color: $textColorThird;
+    }
+
+    &__text {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 1.67em;
+        margin-bottom: 1.6rem;
+
+        @media (max-width: $md4+px) {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    &__author {
+        color: $textColorSecondary;
+    }
+}
+
+.images {
+    padding-left: 0;
+    margin-bottom: 0;
+    gap: 3.2rem;
+    padding-left: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: $md3+px) {
+        gap: 2.4rem;
+    }
+
+    & > li {
+        flex: 1 1 auto;
+        list-style: none !important;
+        min-width: calc(50% - 1.8rem);
+        margin-bottom: 0 !important;
+
+        @media (max-width: $md3+px) {
+            flex: 0 1 100%;
+        }
+    }
+
+    &__item {
+        display: block;
+        border-radius: 2rem;
+        overflow: hidden;
+        height: 0;
+        padding-bottom: 69.17%;
+    }
+}
