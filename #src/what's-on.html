@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Elmbridge"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": ""
+        })
+        <!-- == // TOP LINE ================== -->
+
+        <main class="_page what's-on-page" data-padding-top-header-size>
+
+            @@include('common/hero/_hero.html', {
+            "breadcrumbs": ['<a href="#">Home</a>', 'What’s On'],
+            "title": "What’s On",
+            "text": false
+            })
+
+            <div class="padding-wrap">
+                <div class="container">
+                    EVENTS
+                </div>
+            </div>
+
+            <div class="padding-wrap pb-0">
+                <div class="container">
+                    @@include('common/cta/_cta.html')
+                </div>
+            </div>
+            <div class="p-80"></div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>
